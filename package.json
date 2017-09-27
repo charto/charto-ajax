@@ -1,0 +1,29 @@
+{
+  "name": "charto-ajax",
+  "version": "1.0.0",
+  "description": "Yet another simple ajax library for browsers",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "tsc": "tsc",
+    "prepublish": "tsc -p src"
+  },
+  "author": "Juha Järvi",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/charto/charto-ajax.git"
+  },
+  "bugs": {
+    "url": "https://github.com/charto/charto-ajax/issues"
+  },
+  "homepage": "https://github.com/charto/charto-ajax#readme",
+  "keywords": [
+    "ajax",
+    "fetch",
+    "xhr"
+  ],
+  "devDependencies": {
+    "typescript": "^2.5.2"
+  }
+}
