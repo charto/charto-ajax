@@ -2,9 +2,13 @@
 // Released under the MIT license, see LICENSE.
 
 export interface AjaxOptions {
+	/** HTTP method, default is GET. */
 	method?: string;
+	/** Outgoing headers. *
 	headers?: { [key: string]: string | number };
+	/** HTTP request body, default is null. */
 	body?: string | Uint8Array | ArrayBuffer | Blob | Document | null;
+	/** XMLHttpRequest instance. If unset, a new one is created. */
 	xhr?: XMLHttpRequest;
 }
 
@@ -22,7 +26,7 @@ export function ajax(url: string, options: AjaxOptions = {}, params?: { [key: st
 		xhr.onerror = () => reject(xhr);
 
 		if(params) {
-			// Sort and encode query parameters.
+			// Sort (to make requests deterministic) and encode query parameters.
 			const query = Object.keys(params).sort().map((key: string) =>
 				encodeURIComponent(key) + '=' + encodeURIComponent('' + params[key])
 			).join('&');
